@@ -1,9 +1,21 @@
 const { Router } = require("express")
 
+const OngController = require("./controllers/OngController.js")
+const IncidentController = require("./controllers/IncidentController.js")
+const ProfileController = require("./controllers/ProfileController.js")
+const SessionController = require("./controllers/SessionController.js")
+
 const routes = Router()
 
-routes.get("/", (req, res) => {
-  res.json({ message: "Hello World" })
-})
+routes.post("/sessions", SessionController.create)
+
+routes.get("/ongs", OngController.index)
+routes.post("/ongs", OngController.create)
+
+routes.get("/profile", ProfileController.index)
+
+routes.get("/incidents", IncidentController.index)
+routes.post("/incidents", IncidentController.create)
+routes.delete("/incidents/:id", IncidentController.delete)
 
 module.exports = routes
