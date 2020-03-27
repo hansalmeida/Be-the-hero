@@ -13,8 +13,8 @@ const Incidents = () => {
   const [totalIncidents, setTotalIncidents] = useState(0)
   const navigation = useNavigation()
 
-  function navigateToDetail() {
-    navigation.navigate("Detail")
+  function navigateToDetail(incident) {
+    navigation.navigate("Detail", { incident })
   }
 
   async function loadIncidents() {
@@ -65,7 +65,7 @@ const Incidents = () => {
 
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={navigateToDetail}
+              onPress={() => navigateToDetail(incident)}
             >
               <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
               <Feather name="arrow-right" size={16} color="#e02041" />
