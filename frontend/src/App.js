@@ -1,11 +1,11 @@
 import React from "react"
 import "./Global.scss"
-import Logon from "./pages/Logon"
+import Routes from "./routes"
 
 function App() {
   return (
     <div className="App">
-      <Logon />
+      <Routes />
     </div>
   )
 }
