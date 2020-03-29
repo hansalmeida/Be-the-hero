@@ -29,7 +29,7 @@ routes.post(
         .email(),
       whatsapp: Joi.string()
         .required()
-        .max(11)
+        .max(13)
         .min(10),
       city: Joi.string().required(),
       uf: Joi.string()
