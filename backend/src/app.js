@@ -10,5 +10,4 @@ app.use(express.json())
 app.use(routes)
 app.use(errors())
 
-console.clear() // Only for clearing the nodemon console while in development mode
-app.listen(3333)
+module.exports = app
